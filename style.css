@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper_header{
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+    background-image: url(./assets/SVG/action_key_FILL0_wght400_GRAD0_opsz24.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35%;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 50px; */
+    transition: 250ms height ease-in;
+}
+.menu > a {
+    padding: 30px;
+    text-decoration: none;
+    color:darkred;
+    font-size: 32px;
+    transition: 50ms opacity ease-in;
+}
+.menu > a:hover {
+    text-decoration: none;
+    color:white;
+}
+/* ----------hamburger---------- */
+.hamburger {
+    position: absolute;
+    /* padding: 20px 45px; */
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    display: none;
+    top: 20px;
+    right: 20px;
+}
+
+.bar {
+    height: 5px;
+    width: 45px;
+    border-radius: 2.5px;
+    background-color: black;
+    position: absolute;
+    transform-origin: center;
+    transition: translateY 1000ms ease-in, rotate 1000ms ease-in;
+}
+.bar:nth-child(1) {
+    top: 10px;
+}
+.bar:nth-child(3) {
+    bottom: 10px;
+}
+
+.hamburger.active_ham .bar{
+    height: 5px;
+    width: 60px;
+    transform: scale(0%);
+}
+.hamburger.active_ham .bar:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.hamburger.active_ham .bar:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+@media (max-width: 700px) {
+    .hamburger{
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        /* align-self: normal; */
+        justify-content: center;
+        /* gap: 10px; */
+    }
+    .menu > a {
+        opacity: 0;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 10svh;
+        height: 0;
+        overflow-y: hidden;
+    }
+    .active {
+        height: 100svh;
+    }
+    .active > a {
+        opacity: 1;
+        transition: 50ms opacity ease-in 250ms;
+    }
+}
