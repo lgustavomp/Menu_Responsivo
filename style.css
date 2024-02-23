@@ -17,7 +17,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 35%;
+    /* fill: red; */
 }
+
+/* .logo > svg {
+    fill: red;
+} */
+
 .menu {
     display: flex;
     justify-content: center;
@@ -52,9 +58,10 @@ body {
     height: 5px;
     width: 45px;
     border-radius: 2.5px;
-    background-color: black;
+    background-color: gray;
     position: absolute;
     transform-origin: center;
+    /* transition: 250ms height ease-in; */
     transition: translateY 1000ms ease-in, rotate 1000ms ease-in;
 }
 .bar:nth-child(1) {
